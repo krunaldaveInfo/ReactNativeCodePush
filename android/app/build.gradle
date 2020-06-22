@@ -153,7 +153,7 @@ android {
             keyPassword 'android'
         }
         releaseSigningConfig {
-            storeFile rootProject.file("app/appcenter.keystore")
+            storeFile rootProject.file("appcenter.keystore")
             storePassword 'app@123'
             keyAlias 'appcenter'
             keyPassword 'app@123'
