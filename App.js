@@ -25,7 +25,7 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-
+import codePush from 'react-native-code-push';
 const App: () => React$Node = () => {
   return (
     <>
@@ -56,7 +56,10 @@ const App: () => React$Node = () => {
             </View>
             <TouchableOpacity
               onPress={() => {
-                Alert.alert('Hello', 'Champ');
+                codePush.sync({
+                  updateDialog: true,
+                  installMode: codePush.InstallMode.IMMEDIATE,
+                });
               }}>
               <View style={styles.sectionContainer}>
                 <Text style={styles.sectionTitle}>Debug</Text>

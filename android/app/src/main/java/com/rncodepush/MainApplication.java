@@ -2,14 +2,17 @@ package com.rncodepush;
 
 import android.app.Application;
 import android.content.Context;
+
+import androidx.annotation.Nullable;
+
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
-import com.microsoft.codepush.react.CodePush;
-import com.microsoft.codepush.react.CodePush;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
+import com.microsoft.codepush.react.CodePush;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
@@ -35,6 +38,12 @@ public class MainApplication extends Application implements ReactApplication {
         protected String getJSMainModuleName() {
           return "index";
         }
+
+          @Nullable
+          @Override
+          protected String getJSBundleFile() {
+              return  CodePush.getJSBundleFile();
+          }
       };
 
   @Override
